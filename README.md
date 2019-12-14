@@ -26,7 +26,7 @@ from surprise.model_selection import cross_validate, KFold
 ```
 
 ## 1. Introduction
-Recommender systems goal is to push *relevant* items to a given user. Understanding and modelling the user's preferences is required to reach this goal. In this project you will learn how to model the user's preferences with the [Surprise library](http://surpriselib.com/) to build different recommender systems. The first one will be a pure *collaborative filtering* approach, and the second one will rely on item attributes in a *content-based* way. First of all you have to download the dataset and unzip it in the `./data/raw` folder.
+Recommender systems goal is to push *relevant* items to a given user. Understanding and modelling the user's preferences is required to reach this goal. In this project you will learn how to model the user's preferences with the [Surprise library](http://surpriselib.com/) to build different recommender systems. The first one will be a pure *collaborative filtering* approach, and the second one will rely on item attributes in a *content-based* way.
 
 ## 2. Loading Data
 We use here the [MovieLens dataset](https://grouplens.org/datasets/movielens/). It contains 25 millions of users ratings. the data are in the `./data/raw` folder. We could load directly the .csv file with [a built-in Surprise function](https://github.com/NicolasHug/Surprise/blob/ef3ed6e98304dbf8d033c8eee741294b05b5ba07/surprise/dataset.py#L105), but it's more convenient to load it through a Pandas dataframe for later flexibility purpose.
@@ -75,92 +75,6 @@ def get_subset(df, number):
 df_ratings_100k = get_subset(df_ratings, 100000)
 df_movies_100 = get_subset(df_movies, 100)
 ```
-
-
-```python
-rids = np.arange(df_movies.shape[0])
-np.random.shuffle(rids)
-df_movies_100 = df_movies.iloc[rids[:100], :].copy()
-df_movies_100.head(5)
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>movieId</th>
-      <th>title</th>
-      <th>genres</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>41634</th>
-      <td>162126</td>
-      <td>Autobiography of a Princess (1975)</td>
-      <td>(no genres listed)</td>
-    </tr>
-    <tr>
-      <th>56672</th>
-      <td>194666</td>
-      <td>Roads in February (2018)</td>
-      <td>Drama</td>
-    </tr>
-    <tr>
-      <th>39646</th>
-      <td>157679</td>
-      <td>Alley Cats Strike (2000)</td>
-      <td>Children|Comedy|Drama</td>
-    </tr>
-    <tr>
-      <th>44889</th>
-      <td>169196</td>
-      <td>Once Upon a Time Veronica (2012)</td>
-      <td>Drama</td>
-    </tr>
-    <tr>
-      <th>55361</th>
-      <td>191777</td>
-      <td>Revenge: A Love Story (2010)</td>
-      <td>Thriller</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-df_movies_100.iloc[3]
-```
-
-
-
-
-    movieId                              169196
-    title      Once Upon a Time Veronica (2012)
-    genres                                Drama
-    Name: 44889, dtype: object
-
-
 
 
 ```python
