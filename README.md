@@ -161,7 +161,7 @@ Here we will rely directly on items attributes. First we have to describe a user
 ```python
 # computing similarities requires too much ressources on the whole dataset, so we take the subset with 100 items
 df_movies_100 = df_movies_100.reset_index(drop=True)
-df_movies_100
+df_movies_100.head(5)
 ```
 
 
@@ -221,45 +221,8 @@ df_movies_100
       <td>Revenge: A Love Story (2010)</td>
       <td>Thriller</td>
     </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>150870</td>
-      <td>Tekken: Blood Vengeance (2011)</td>
-      <td>Action|Animation</td>
-    </tr>
-    <tr>
-      <th>96</th>
-      <td>122280</td>
-      <td>Sabretooth (2002)</td>
-      <td>Action|Adventure|Horror|Sci-Fi|Thriller</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>186257</td>
-      <td>Criminal Talent (1988)</td>
-      <td>Comedy|Crime|Drama</td>
-    </tr>
-    <tr>
-      <th>98</th>
-      <td>187309</td>
-      <td>The Week Of (2018)</td>
-      <td>Comedy</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>159976</td>
-      <td>Pelé: Birth of a Legend (2016)</td>
-      <td>Drama</td>
-    </tr>
   </tbody>
 </table>
-<p>100 rows × 3 columns</p>
 </div>
 
 
