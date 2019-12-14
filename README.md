@@ -9,10 +9,7 @@ Then run these 3 commands:
 
 
 ```python
-import sys
-sys.path.append("../src")
 from tqdm import tqdm
-
 import numpy as np
 import pandas as pd
 
